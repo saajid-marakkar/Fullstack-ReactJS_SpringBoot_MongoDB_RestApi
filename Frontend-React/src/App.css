@@ -1,0 +1,95 @@
+*{margin:0;padding:0}
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height:35px;
+  width: 100%;
+  background:  #343A40;
+  color: #B05570;
+  text-align: center;
+  padding-top: 5px;
+}
+.home{
+  background-image: url('https://images.hdqwalls.com/download/sea-of-clouds-below-mountains-5k-0s-2560x1024.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 1000px;
+  margin: 0px;
+  top: 0;
+  margin-top: 0px;
+  color: rgb(15, 15, 15);
+}
+.students-page{
+  background-image: url('https://images.hdqwalls.com/download/sea-of-clouds-below-mountains-5k-0s-2560x1024.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 1000px;
+  margin: 0px;
+  top: 0;
+  margin-top: 0px;
+  
+}
+.login-box{
+  border-radius: 25px;
+  border: 2px solid #ffffff;
+  height: 600px;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  padding-top: 20px;
+  position: relative;
+  margin-top: 10px;
+  
+ }
+ .login-title{
+   
+   margin-bottom: 10px;
+   justify-content: center;
+   border: 3px 3px 5px white;
+ }
+ .name-field{
+   width: 100%;
+   height: 35px;
+   
+ }
+ .birthday-label {
+  position:absolute;
+  width: 100%;
+  
+  
+ }
+ .studyingin-label{
+  padding-right:50% !important;
+  padding-left:50% ;
+ }
+ .name-error{
+   color: red;
+   padding-left: 5px;
+ }
+ button{
+   background-color: #2C303A;
+   height: 40px;
+  
+   border-radius: 20px;
+   margin: 20px;
+   color: #B05570;
+   border-color: #B05570;
+ }
+ button:hover{
+  background-color: #B05570;
+  
+  color: #ffffff;
+}
+.student-details{
+  width: 100%;
+  margin-top: 7px;
+}
+.home-heading1{
+  justify-content: center;
+}
+.logo{
+  margin-top: 10px;
+}
