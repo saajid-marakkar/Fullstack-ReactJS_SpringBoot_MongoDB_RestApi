@@ -21,7 +21,7 @@ class Students extends Component {
       this.submit = this.submit.bind(this)
   }
   componentDidMount(){
-    axios.get("http://localhost:8080/getAll")
+    axios.get("http://localhost:8080/getAllByName")
     .then((res)=>{
       this.setState({
         students:res.data,
@@ -52,6 +52,9 @@ class Students extends Component {
         })
     }
     else{
+        this.setState({
+            formError : ""    
+        })
         const regex =/^[A-Za-z ]*$/
         let isValid = this.state.userName.match(regex)
         if(isValid){
