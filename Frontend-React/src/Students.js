@@ -14,7 +14,8 @@ class Students extends Component {
         class: "",
         division:"",
         gender:"",
-        nameError:"" 
+        nameError:"",
+        formError:"" 
       }
       this.handleChange = this.handleChange.bind(this)
       this.submit = this.submit.bind(this)
@@ -30,7 +31,8 @@ class Students extends Component {
         class: "",
         division:"",
         gender:"",
-        nameError:""
+        nameError:"",
+        formError:""
       })
     })
   }
@@ -44,29 +46,35 @@ class Students extends Component {
   }
   submit(event)
   {
-    const regex =/^[A-Za-z ]*$/
-    let isValid = this.state.userName.match(regex)
-    if(isValid){
+    if((this.state.userName) ==="" || (this.state.birthday) ==="" || (this.state.class) ==="" || (this.state.division) ==="" || (this.state.gender) ==="" ){
         this.setState({
-                nameError : ""    
-            })
-        axios.post("http://localhost:8080/send",{
-            userName:this.state.userName,
-            standard:this.state.class,
-            division:this.state.division,
-            gender:this.state.gender,
-            dob:this.state.birthday
-            }).then((res)=>{
-                this.componentDidMount();
+            formError : "enter all fields in the form"    
         })
     }
     else{
-        console.log("else part");
-        this.setState({
-            nameError : "enter name with letters and space only."
-        })
+        const regex =/^[A-Za-z ]*$/
+        let isValid = this.state.userName.match(regex)
+        if(isValid){
+            this.setState({
+                    nameError : ""    
+                })
+            axios.post("http://localhost:8080/send",{
+                userName:this.state.userName,
+                standard:this.state.class,
+                division:this.state.division,
+                gender:this.state.gender,
+                dob:this.state.birthday
+                }).then((res)=>{
+                    this.componentDidMount();
+            })
+        }
+        else{
+            console.log("else part");
+            this.setState({
+                nameError : "enter name with letters and space only."
+            })
+        }
     }
-    
   }
   render() {
     return (
@@ -88,7 +96,7 @@ class Students extends Component {
                                 pattern="^[A-Za-z ]+$"
                                 required
                             /> 
-                            <pre className="name-error  text-center">{this.state.nameError}</pre>
+                            <pre className="error  text-center">{this.state.nameError}</pre>
                             <br></br>
                             <div className="birthday  text-center">
                                 <label htmlFor="birthday"  className=" mx-auto text-center" >Date of Birth:</label>
@@ -159,6 +167,7 @@ class Students extends Component {
                                         </label>
                                     </div>
                                     <br />      
+                                    <pre className="error  text-center">{this.state.formError}</pre>
                             <div className="text-center">
                                 <button type="button" className="btn btn-outline-danger" onClick={this.submit}>Submit</button>
                             </div>
