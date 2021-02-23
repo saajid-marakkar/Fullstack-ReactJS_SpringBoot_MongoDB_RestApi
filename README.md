@@ -4,7 +4,7 @@ Requirements =>
 1.ReactJS - frontend
 2.MongoDB - database
 3.SpringBoot - backend
-4.Postmand - API testing
+4.Postman - API testing
 
 1.for the frontend part in ReactJs => 
 enter the following packages installing commands before starting the frontend server
