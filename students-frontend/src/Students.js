@@ -40,12 +40,10 @@ class Students extends Component {
     this.setState({
         [event.target.name]: event.target.value
     })
-    
-    
-    // console.log(this.state.userName)
   }
-  submit(event)
+  submit(event) //fuction for handling submit
   {
+      //checking all input fields are entered or not
     if((this.state.userName) ==="" || (this.state.birthday) ==="" || (this.state.class) ==="" || (this.state.division) ==="" || (this.state.gender) ==="" ){
         this.setState({
             formError : "enter all fields in the form"    
@@ -56,18 +54,18 @@ class Students extends Component {
             formError : ""    
         })
         const regex =/^[A-Za-z ]*$/
-        let isValid = this.state.userName.match(regex)
+        let isValid = this.state.userName.match(regex) //checking name field contains input having letters and spaces only.
         if(isValid){
             this.setState({
                     nameError : ""    
                 })
-            axios.post("http://localhost:8080/send",{
+            axios.post("http://localhost:8080/send",{ //sending post request to backend
                 userName:this.state.userName,
                 standard:this.state.class,
                 division:this.state.division,
                 gender:this.state.gender,
                 dob:this.state.birthday
-                }).then((res)=>{
+                }).then((res)=>{ //clearing all fields if post request is successful
                     this.componentDidMount();
             })
         }
@@ -84,11 +82,10 @@ class Students extends Component {
         <div className="students-page">
             <div className="container">
                 <div className="row">
-                    <div className="login col-12 col-sm-12 col-md-5 col-lg-5" >
+                    <div className="login col-12 col-sm-12 col-md-5 col-lg-5" > {/* students form */}
                         <div className='login-box'>
                             <h1 className="login-title text-center">Student Form</h1>
                             <br></br>
-                            {/* <form onsubmit={this.validate()} action="./profile" method="GET"> */}
                             <form >
                             <input type="text"
                                 placeholder="Enter Student Name"
@@ -99,7 +96,7 @@ class Students extends Component {
                                 pattern="^[A-Za-z ]+$"
                                 required
                             /> 
-                            <pre className="error  text-center">{this.state.nameError}</pre>
+                            <pre className="error  text-center">{this.state.nameError}</pre> {/* for showing studentname error*/}
                             <br></br>
                             <div className="birthday  text-center">
                                 <label htmlFor="birthday"  className=" mx-auto text-center" >Date of Birth:</label>
@@ -170,16 +167,15 @@ class Students extends Component {
                                         </label>
                                     </div>
                                     <br />      
-                                    <pre className="error  text-center">{this.state.formError}</pre>
-                            <div className="text-center">
-                                <button type="button" className="btn btn-outline-danger" onClick={this.submit}>Submit</button>
-                            </div>
-                        
+                                    <pre className="error  text-center">{this.state.formError}</pre> {/* for showing input fields error*/}
+                                <div className="text-center">
+                                    <button type="button" className="btn btn-outline-danger" onClick={this.submit}>Submit</button>
+                                </div>
                             </form>
                             <br/>
                         </div>
                     </div>
-                    <div className="student-details col-12 col-sm-12 col-md-7 col-lg-7">
+                    <div className="student-details col-12 col-sm-12 col-md-7 col-lg-7"> {/* students table */}
                         <h1 className="text-center" style={{color:"white"}}>Students Details</h1>
                         <table className="table table-dark">
                             <thead className="thead-dark">
@@ -193,7 +189,7 @@ class Students extends Component {
                             </thead>
                             <tbody>
                             {
-                                this.state.students.map(student =>
+                                this.state.students.map(student =>  //passing each document fetched using api to each rows in table.
                                 <tr scope="row" key={student.rollNumber}>
                                     <td>{student.userName}</td>
                                     <td>{student.standard}</td>
