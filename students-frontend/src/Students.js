@@ -21,7 +21,7 @@ class Students extends Component {
       this.submit = this.submit.bind(this)
   }
   componentDidMount(){
-    axios.get("http://localhost:8080/getAllByName")
+    axios.get("http://localhost:8080/getAllByName")// sending get request to backend
     .then((res)=>{
       this.setState({
         students:res.data,
