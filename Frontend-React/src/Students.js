@@ -124,13 +124,13 @@ class Students extends Component {
                                         <option value="III">III</option>
                                         <option value="IV">IV</option>
                                         <option value="V">V</option>
-                                        <option value="V1">V1</option>
-                                        <option value="V11">V11</option>
-                                        <option value="V111">V111</option>
-                                        <option value="1X">1X</option>
+                                        <option value="VI">VI</option>
+                                        <option value="VII">VII</option>
+                                        <option value="VIII">VIII</option>
+                                        <option value="IX">IX</option>
                                         <option value="X">X</option>
-                                        <option value="X11">X11</option>
-                                        <option value="X12">X12</option>
+                                        <option value="XII">XII</option>
+                                        <option value="XI2">XI2</option>
                                 </select>
                                 <select 
                                         value={this.state.division} 
@@ -194,7 +194,7 @@ class Students extends Component {
                             <tbody>
                             {
                                 this.state.students.map(student =>
-                                <tr scope="row" key={student._id}>
+                                <tr scope="row" key={student.rollNumber}>
                                     <td>{student.userName}</td>
                                     <td>{student.standard}</td>
                                     <td>{student.division}</td>

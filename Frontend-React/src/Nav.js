@@ -10,10 +10,10 @@ function Nav() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav" style={{color:"red"}}>
-                    <Link className="nav-item nav-link active" to="/">
+                    <Link className="nav-item nav-link active links" to="/">
                         Home
                     </Link>
-                    <Link className="nav-item nav-link active" to="/students">
+                    <Link className="nav-item nav-link active links" to="/students">
                         Students
                     </Link>
                 </div>
