@@ -1,4 +1,4 @@
-# Fullstack-ReactJS_Spring_Mongo
+# Fullstack-ReactJS_SpringBoot_MongoDB
 
 Requirements =>
 1.ReactJS - frontend
@@ -23,9 +23,9 @@ enter the following packages installing commands before starting the frontend se
 
 
 ### for running the servers 
-*ReactJS - enter into students-frondend folder in terminal and enter the command => npm start 
-*MongoDB - enter into bin folder where mongodb installed then open => mongod after that open mongo
-*SpringBoot - open students-backend folder in eclipse/spring-tool-suite and right click on students-backend folder => run as Spring Boot App
+* ReactJS - enter into students-frondend folder in terminal and enter the command => npm start 
+* MongoDB - enter into bin folder where mongodb installed then open => mongod after that open mongo
+* SpringBoot - open students-backend folder in eclipse/spring-tool-suite and right click on students-backend folder => run as Spring Boot App
 
 
 ##### NB* make necessary changes in code according to your server port numbers
