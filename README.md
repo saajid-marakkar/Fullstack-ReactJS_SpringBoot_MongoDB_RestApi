@@ -15,7 +15,7 @@ enter the following packages installing commands before starting the frontend se
 2.for the database part in MongoDB =>
 * install MongoDB combass for GUI based view if needed
 
-3.for the backend part in MongoDB =>
+3.for the backend part in SpringBoot =>
 * SpringBoot dependencies like Springweb, lombok, Spring Data MongoDB, SpringBoot Devtools etc are included along the project
 
 4.for testing the restAPI =>
